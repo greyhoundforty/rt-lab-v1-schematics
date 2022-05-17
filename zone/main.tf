@@ -4,7 +4,7 @@ resource "ibm_is_instance" "instance" {
   profile                  = var.profile
   metadata_service_enabled = true
   resource_group           = var.resource_group
-  user_data = file("init.yml")
+  user_data                = file("${path.module}/init.yml")
 
   primary_network_interface {
     name              = "eth0"
